@@ -2,10 +2,16 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: var(--main-font);
+  font-size: var(--s-regular);
 }
 
 a, button {
   all: unset;
+}
+
+label, button {
+  text-transform: uppercase;
 }
 
 body {
@@ -14,4 +20,16 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+
+:root {
+  --bg-color: #BE0909;
+  --bg-color-2: #FFB039;
+  --white: #fff;
+  --stroke-color: #9DBEBB;
+  --btn-color: #468189;
+  --main-font: "Roboto", sans-serif;
+  --s-regular: 18px;
+  --w-regular: 400;
+  --w-bold: 700;
 }/*# sourceMappingURL=styles.css.map */

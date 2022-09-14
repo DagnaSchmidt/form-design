@@ -3,13 +3,39 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: var(--main-font);
+    font-size: var(--s-regular);
 }
 a, button {
     all: unset;
+}
+label, button {
+    text-transform: uppercase;
 }
 body {
     overflow-x: hidden;   //hide width scroll
 }
 html {
     scroll-behavior: smooth;
+}
+
+//variables// 
+:root {
+
+    //colors// 
+    --bg-color: #BE0909;
+    --bg-color-2: #FFB039;
+    --white: #fff;
+    --stroke-color: #9DBEBB;
+    --btn-color: #468189;
+
+    //fonts// 
+    --main-font: 'Roboto', sans-serif;
+
+    //font sizes// 
+    --s-regular: 18px;
+
+    //font weights// 
+    --w-regular: 400;
+    --w-bold: 700;
 }
