@@ -10,6 +10,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+<!--FONT AWESOME-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/90116f7b33.js" crossorigin="anonymous"></script>
 <!--TITLE-->
     <title>Duck form</title>
 </head>
@@ -17,25 +20,41 @@
 
     <main class="form">
         <div class="form__content">
-            <form action="">
+            <form action="" autocomplete="off">
+                <!--name-->
                 <label for="name" class="form__label">full name</label>
-                <input type="text" id="name">
+                <input type="text" id="name" class="form__input-name input-basic-style" required>
+                <!--email-->
                 <label for="email" class="form__label">email</label>
-                <input type="email" id="email">
-                <label for="regarding" class="form__label">message regarding</label>
-                <select name="" id="regarding">
-                    <option value="order">order</option>
-                    <option value="payment">payment</option>
-                    <option value="other" selected>other</option>
-                </select>
+                <input type="email" id="email" placeholder=" Your Email" class="form__input-email input-basic-style" required>
+                <!--dropdown-->
+                <div class="form__dropdown-container">
+                    <label for="regarding" class="form__label">message regarding</label>
+                    <i class="fa-solid fa-caret-down form__dropdown__icon"></i>
+                    <select name="" id="regarding" class="form__dropdown input-basic-style">
+                        <option value="order" class="form__dropdown__option">order</option>
+                        <option value="payment" class="form__dropdown__option">payment</option>
+                        <option value="other" selected class="form__dropdown__option">other</option>
+                    </select>
+                </div>
+                <!--textarea-->
                 <label for="message" class="form__label">message</label>
-                <textarea name="message" id="message" cols="1" rows="10" placeholder="write your message here..."></textarea>
+                <textarea name="message" id="message" cols="1" rows="1" placeholder=" Your Message" class="form__text-area input-basic-style"></textarea>
+                <!--checkbox-->
+                <div class="form__checkbox__container">
+                    <label for="checkbox" class="form__checkbox">
+                        <input type="checkbox" class="form__checkbox-standard" checked>
+                        <span class="form__checkbox-new"></span>
+                        <p class="form__checkbox__title">
+                            I want to sign to newspaper!
+                        </p>
+                    </label>
+                </div>
+                <!--button-->
                 <button type="submit" class="form__btn">send message</button>
             </form>
         </div>
-        <div class="form__bg">
-            <img src="img/hiclipart 2.svg" alt="photo of duck toy" class="form__bg__img">
-        </div>
+        <img src="img/duck2.png" alt="photo of duck toy" class="form__img">
     </main>
     
 </body>

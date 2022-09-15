@@ -6,14 +6,8 @@
     font-family: var(--main-font);
     font-size: var(--s-regular);
 }
-a, button {
+a, button, input, textarea, select {
     all: unset;
-}
-label, button {
-    text-transform: uppercase;
-}
-body {
-    overflow-x: hidden;   //hide width scroll
 }
 html {
     scroll-behavior: smooth;
@@ -25,11 +19,12 @@ html {
     //colors// 
     --bg-color: #BE0909;
     --bg-color-2: #FFB039;
+    --input-hover-active-color: #bf3b3b;
     --white: #fff;
     --stroke-color: #9DBEBB;
     --btn-color: #468189;
 
-    //fonts// 
+    //font// 
     --main-font: 'Roboto', sans-serif;
 
     //font sizes// 
@@ -38,4 +33,129 @@ html {
     //font weights// 
     --w-regular: 400;
     --w-bold: 700;
+}
+
+body {
+    background: linear-gradient(90deg, var(--bg-color) 0%, var(--bg-color) 65%, var(--bg-color-2) 65%, var(--bg-color-2) 100%);
+}
+
+//reusables// 
+.input-basic-style {
+    height: 34px;
+    border-bottom: 1px solid var(--stroke-color);
+    margin-bottom: 22px;
+    &:hover {
+        background-color: var(--input-hover-active-color);
+    }
+    &:focus {
+        border: 1px solid var(--stroke-color);
+    }
+    &::placeholder {
+        color: var(--white);
+        text-transform: capitalize;
+        line-height: 21px;
+        letter-spacing: 0.3em;
+        //check!! position left
+    }
+}
+.form__label {
+    color: var(--white);
+    font-weight: var(--w-regular);
+    line-height: 21px;
+    letter-spacing: 0.1em;
+    padding-bottom: 30px;
+    text-transform: uppercase;
+    width: 224px; 
+    display: flex;
+}
+
+//FORM// 
+.form {
+    position: relative;
+    left: 7vw;
+    width: 84vw;
+    height: 100vh;
+    display: flex;
+    padding: 24px 0;
+
+//form container// 
+    &__content {
+        align-self: center;
+        width: 43vw;
+        padding-right: 24px;
+        display: flex;
+        flex-direction: column;
+        }
+
+//duck photo//
+    &__img {
+        height: 75vh;
+        width: auto;
+        align-self: flex-end;
+    }
+
+//inputs// 
+    &__input-name {
+        width: 100%;
+    }
+    &__input-email {
+        width: 160px;
+    }
+
+//dropdown// 
+    &__dropdown-container {
+        position: relative;
+    }
+    &__dropdown {
+        margin-bottom: 24px;
+        width: 160px;
+        height: 34px;
+        border-bottom: 1px solid var(--stroke-color);
+        &__icon {
+            color: var(--white);
+            position: absolute;
+            left: 140px;
+            top: 56px;
+            z-index: 2;
+        }
+        &__option {
+            color: var(--white);
+            //check!! selection
+        }
+    }
+    &__text-area {
+        width: 100%;
+    }
+
+//checkbox//
+    &__checkbox {
+        cursor: pointer;
+        &-standard {
+            position: absolute;
+            opacity: 0;
+        }
+        &-new {
+            width: 24px;
+            height: 24px;
+            background-color: var(--bg-color-2);
+        }
+        &__title {
+            color: var(--white);
+        }
+    }
+
+//button//
+    &__btn {
+        display: block;
+        margin: 56px auto 0 auto;
+        width: 202px;
+        height: 48px;
+        background-color: var(--btn-color);
+        border-radius: 40px;
+        text-align: center;
+        color: var(--white);
+        box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.5);
+        font-weight: var(--w-bold);
+        text-transform: uppercase;
+    }
 }

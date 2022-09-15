@@ -6,16 +6,8 @@
   font-size: var(--s-regular);
 }
 
-a, button {
+a, button, input, textarea, select {
   all: unset;
-}
-
-label, button {
-  text-transform: uppercase;
-}
-
-body {
-  overflow-x: hidden;
 }
 
 html {
@@ -25,6 +17,7 @@ html {
 :root {
   --bg-color: #BE0909;
   --bg-color-2: #FFB039;
+  --input-hover-active-color: #bf3b3b;
   --white: #fff;
   --stroke-color: #9DBEBB;
   --btn-color: #468189;
@@ -32,4 +25,126 @@ html {
   --s-regular: 18px;
   --w-regular: 400;
   --w-bold: 700;
+}
+
+body {
+  background: linear-gradient(90deg, var(--bg-color) 0%, var(--bg-color) 65%, var(--bg-color-2) 65%, var(--bg-color-2) 100%);
+}
+
+.input-basic-style {
+  height: 34px;
+  border-bottom: 1px solid var(--stroke-color);
+  margin-bottom: 22px;
+}
+.input-basic-style:hover {
+  background-color: var(--input-hover-active-color);
+}
+.input-basic-style:focus {
+  border: 1px solid var(--stroke-color);
+}
+.input-basic-style::-moz-placeholder {
+  color: var(--white);
+  text-transform: capitalize;
+  line-height: 21px;
+  letter-spacing: 0.3em;
+}
+.input-basic-style:-ms-input-placeholder {
+  color: var(--white);
+  text-transform: capitalize;
+  line-height: 21px;
+  letter-spacing: 0.3em;
+}
+.input-basic-style::placeholder {
+  color: var(--white);
+  text-transform: capitalize;
+  line-height: 21px;
+  letter-spacing: 0.3em;
+}
+
+.form__label {
+  color: var(--white);
+  font-weight: var(--w-regular);
+  line-height: 21px;
+  letter-spacing: 0.1em;
+  padding-bottom: 30px;
+  text-transform: uppercase;
+  width: 224px;
+  display: flex;
+}
+
+.form {
+  position: relative;
+  left: 7vw;
+  width: 84vw;
+  height: 100vh;
+  display: flex;
+  padding: 24px 0;
+}
+.form__content {
+  align-self: center;
+  width: 43vw;
+  padding-right: 24px;
+  display: flex;
+  flex-direction: column;
+}
+.form__img {
+  height: 75vh;
+  width: auto;
+  align-self: flex-end;
+}
+.form__input-name {
+  width: 100%;
+}
+.form__input-email {
+  width: 160px;
+}
+.form__dropdown-container {
+  position: relative;
+}
+.form__dropdown {
+  margin-bottom: 24px;
+  width: 160px;
+  height: 34px;
+  border-bottom: 1px solid var(--stroke-color);
+}
+.form__dropdown__icon {
+  color: var(--white);
+  position: absolute;
+  left: 140px;
+  top: 56px;
+  z-index: 2;
+}
+.form__dropdown__option {
+  color: var(--white);
+}
+.form__text-area {
+  width: 100%;
+}
+.form__checkbox {
+  cursor: pointer;
+}
+.form__checkbox-standard {
+  position: absolute;
+  opacity: 0;
+}
+.form__checkbox-new {
+  width: 24px;
+  height: 24px;
+  background-color: var(--bg-color-2);
+}
+.form__checkbox__title {
+  color: var(--white);
+}
+.form__btn {
+  display: block;
+  margin: 56px auto 0 auto;
+  width: 202px;
+  height: 48px;
+  background-color: var(--btn-color);
+  border-radius: 40px;
+  text-align: center;
+  color: var(--white);
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.5);
+  font-weight: var(--w-bold);
+  text-transform: uppercase;
 }/*# sourceMappingURL=styles.css.map */
