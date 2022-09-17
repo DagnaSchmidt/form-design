@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!--STYLES-->
     <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/normalize.css" />
 <!--FONT-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,12 +40,11 @@
                 </div>
                 <!--textarea-->
                 <label for="message" class="form__label">message</label>
-                <textarea name="message" id="message" cols="1" rows="1" placeholder=" Your Message" class="form__text-area input-basic-style"></textarea>
+                <textarea name="message" id="message" cols="1" rows="1" placeholder="  Your Message" class="form__text-area input-basic-style"></textarea>
                 <!--checkbox-->
                 <div class="form__checkbox__container">
                     <label for="checkbox" class="form__checkbox">
-                        <input type="checkbox" class="form__checkbox-standard" checked>
-                        <span class="form__checkbox-new"></span>
+                        <input type="checkbox" class="form__checkbox-standard">
                         <p class="form__checkbox__title">
                             I want to sign to newspaper!
                         </p>

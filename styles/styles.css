@@ -25,6 +25,8 @@ html {
   --s-regular: 18px;
   --w-regular: 400;
   --w-bold: 700;
+  --transition-5s: all 0.5s linear;
+  --transition-2s: all 0.2s linear;
 }
 
 body {
@@ -38,9 +40,11 @@ body {
 }
 .input-basic-style:hover {
   background-color: var(--input-hover-active-color);
+  cursor: text;
 }
 .input-basic-style:focus {
   border: 1px solid var(--stroke-color);
+  cursor: text;
 }
 .input-basic-style::-moz-placeholder {
   color: var(--white);
@@ -100,6 +104,7 @@ body {
 }
 .form__dropdown-container {
   position: relative;
+  cursor: pointer;
 }
 .form__dropdown {
   margin-bottom: 24px;
@@ -122,18 +127,52 @@ body {
 }
 .form__checkbox {
   cursor: pointer;
-}
-.form__checkbox-standard {
-  position: absolute;
-  opacity: 0;
-}
-.form__checkbox-new {
-  width: 24px;
-  height: 24px;
-  background-color: var(--bg-color-2);
+  display: flex;
+  align-items: center;
+  clear: both;
 }
 .form__checkbox__title {
   color: var(--white);
+  padding-left: 12px;
+}
+@supports (-webkit-appearance: none) or (-moz-appearance: none) {
+  .form input[type=checkbox] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    height: 24px;
+    width: 24px;
+    outline: none;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    margin: 0;
+    cursor: pointer;
+    border: 3px solid var(--stroke-color);
+    border-radius: 4px;
+    background-color: transparent;
+  }
+  .form input[type=checkbox]:after {
+    content: "";
+    display: block;
+    left: 0;
+    top: 0;
+    position: absolute;
+    transition: var(--transition-2s);
+  }
+  .form input[type=checkbox]:checked {
+    background-color: var(--btn-color);
+    border: 3px solid var(--btn-color);
+    transition: var(--transition-2s);
+  }
+  .form input[type=checkbox]:hover:not(:checked) {
+    border: 3px solid var(--btn-color);
+    background-color: var(--stroke-color);
+    transition: var(--transition-2s);
+  }
+  .form input[type=checkbox]:before {
+    border: 1px solid var(--stroke-color);
+    transition: var(--transition-5s);
+  }
 }
 .form__btn {
   display: block;
@@ -147,4 +186,10 @@ body {
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.5);
   font-weight: var(--w-bold);
   text-transform: uppercase;
+}
+.form__btn:hover {
+  transform: scale(1.1);
+  color: var(--bg-color);
+  cursor: pointer;
+  transition: var(--transition-2s);
 }/*# sourceMappingURL=styles.css.map */
